@@ -3,10 +3,9 @@ import { useParams } from "react-router-dom";
 
 function Ship({ shipList }) {
   const id = parseInt(useParams().id);
-  //   const ship = shipList.data ? shipList.data.results[id] : "";
   let ship = shipList.find((ship) => ship.id === id);
 
-  console.log(shipList, id, ship);
+  //   console.log(shipList, id, ship);
 
   return (
     ship && (

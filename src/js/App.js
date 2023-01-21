@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, StrictMode } from "react";
 import ReactDOM from "react-dom/client";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
@@ -16,24 +16,7 @@ const App = () => {
     fetchData("https://swapi.dev/api/starships/", setShipList);
   }, []);
 
-  // Add id to objects and Remove api extra information
-  let shipListWithId;
-
-  if (shipList.data) {
-    shipListWithId = shipList.data.results.map((ship) => {
-      let id;
-      if (ship.url.slice(-3, -2) >= "0" && ship.url.slice(-3, -2) <= "9") {
-        id = { id: parseInt(ship.url.slice(-3, -1)) };
-      } else {
-        id = { id: parseInt(ship.url.slice(-2, -1)) };
-      }
-
-      return { ...ship, ...id };
-    });
-
-    console.log(shipListWithId);
-    setShipList(shipListWithId);
-  }
+  //   console.log(shipList);
 
   return (
     <>
@@ -51,7 +34,7 @@ const App = () => {
 };
 
 ReactDOM.createRoot(document.querySelector("#root")).render(
-  <React.StrictMode>
+  <StrictMode>
     <App />
-  </React.StrictMode>
+  </StrictMode>
 );

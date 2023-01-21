@@ -2,12 +2,10 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const ShipList = ({ shipList }) => {
-  console.log(shipList.data);
-
   return (
     <>
       <div className="shiplist">
-        {shipList &&
+        {shipList !== [] &&
           shipList.map((ship) => {
             return (
               <>
