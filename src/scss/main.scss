@@ -1,2 +1,19 @@
 @import "_variables";
 @import "_components";
+
+@import "_header";
+@import "_ship";
+
+.shiplist {
+  display: flex;
+  flex-direction: column;
+}
+
+.ship {
+  border: 1px solid black;
+  display: inline-block;
+  width: 200px;
+  border-radius: 20px;
+  padding: 10px;
+  margin: 10px 0;
+}
