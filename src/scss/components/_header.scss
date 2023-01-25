@@ -1,0 +1,40 @@
+/* ----------------------------- 
+        PRE NAV
+----------------------------- */
+
+h1 {
+  margin: 0;
+}
+
+.header-link {
+  padding-right: 20px;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.pre-nav {
+  margin: 69px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 0 145px;
+}
+
+.header-link {
+  display: flex;
+  align-items: center;
+}
+
+.header-link p {
+  margin: 0;
+  height: 14px;
+}
+
+.pre-nav .nav-item > *:first-child {
+  padding-right: 30px;
+}
+
+/* ----------------------------- 
+        NAV
+----------------------------- */

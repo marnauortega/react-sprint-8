@@ -13,7 +13,7 @@ const fetchData = async (url, setState, page = 1, previousResponse = []) => {
       fetchData(url, setState, page, mergedResults);
       return;
     }
-
+    console.log(mergedResults);
     setState(mergedResults);
   } catch (error) {
     console.error(error);
@@ -53,16 +53,23 @@ const accessNestedResults = (array) => {
 
 const addIdToResults = (shipList) => {
   const shipListWithId = shipList.map((ship) => {
-    let id;
-    if (ship.url.slice(-3, -2) >= "0" && ship.url.slice(-3, -2) <= "9") {
-      id = { id: parseInt(ship.url.slice(-3, -1)) };
-    } else {
-      id = { id: parseInt(ship.url.slice(-2, -1)) };
-    }
-    return { ...ship, ...id };
+    const id = extractIdFromString(ship.url);
+    return { ...ship, id };
   });
 
   return shipListWithId;
 };
 
+const extractIdFromString = (string) => {
+  let id;
+  if (string.slice(-3, -2) >= "0" && string.slice(-3, -2) <= "9") {
+    id = parseInt(string.slice(-3, -1));
+  } else {
+    id = parseInt(string.slice(-2, -1));
+  }
+
+  return id;
+};
+
 export default fetchData;
+export { extractIdFromString };

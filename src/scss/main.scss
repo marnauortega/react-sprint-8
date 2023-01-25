@@ -1,19 +1,21 @@
+@import "_fonts";
 @import "_variables";
-@import "_components";
 
-@import "_header";
-@import "_ship";
+@import "components/_header";
+@import "components/_ship";
+@import "components/_shiplist";
 
-.shiplist {
-  display: flex;
-  flex-direction: column;
+* {
+  box-sizing: border-box;
 }
 
-.ship {
-  border: 1px solid black;
-  display: inline-block;
-  width: 200px;
-  border-radius: 20px;
-  padding: 10px;
-  margin: 10px 0;
+body {
+  margin: 0;
+  font-family: "DINNext", Helvetica;
+  font-weight: 400;
+  background-color: black;
+}
+
+* {
+  color: white;
 }
