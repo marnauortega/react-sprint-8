@@ -2,20 +2,54 @@ const Info = ({ ship }) => {
   return (
     <>
       <div className="info main-info">
-        <p>Model: {ship.model}</p>
-        <p>Starship class: {ship.starship_class}</p>
-        <p>Manufacturer: {ship.manufacturer}</p>
-        <p>cost: {ship.cost}</p>
-      </div>
-      <div className="info secondary-info">
-        <p>Crew: {ship.crew}</p>
-        <p>Passengers: {ship.passengers}</p>
-        <p>Cargo capacity: {ship.cargo_capacity}</p>
-        <p>Consumables: {ship.consumables}</p>
-        <p>Length: {ship.length}</p>
-        <p>Maximum atmosphering speed: {ship.max_atmosphering_speed}</p>
-        <p>Hyperdrive rating: {ship.hyperdrive_rating}</p>
-        <p>Maximum speed in real space: {ship.MGLT + "MGLT"}</p>
+        <h1>{ship.name}</h1>
+        <h2 className="border-bottom">{ship.model}</h2>
+        {/* <div>
+          <p className="info-title">Starship class </p>
+          <p className="info-content">{ship.starship_class}</p>
+        </div> */}
+        <div className="grid">
+          <div>
+            <p className="info-title">Manufacturer </p>
+            <p className="info-content">{ship.manufacturer || "Unkown"}</p>
+          </div>
+          <div>
+            <p className="info-title">cost </p>
+            <p className="info-content">{ship.cost || "Unknown"}</p>
+          </div>
+          <div>
+            <p className="info-title">Crew </p>
+            <p className="info-content">{ship.crew || "Unknown"}</p>
+          </div>
+          <div>
+            <p className="info-title">Passengers </p>
+            <p className="info-content">{ship.passengers || "Unknown"}</p>
+          </div>
+          <div>
+            <p className="info-title">Cargo capacity </p>
+            <p className="info-content">{ship.cargo_capacity || "Unknown"}</p>
+          </div>
+          <div>
+            <p className="info-title">Consumables </p>
+            <p className="info-content">{ship.consumables || "Unknown"}</p>
+          </div>
+          <div>
+            <p className="info-title">Length </p>
+            <p className="info-content">{ship.length || "Unknown"}</p>
+          </div>
+          <div>
+            <p className="info-title">Maximum atmosphering speed </p>
+            <p className="info-content">{ship.max_atmosphering_speed || "Unknown"}</p>
+          </div>
+          <div>
+            <p className="info-title">Hyperdrive rating </p>
+            <p className="info-content">{ship.hyperdrive_rating || "Unknown"}</p>
+          </div>
+          <div>
+            <p className="info-title">Maximum speed in real space </p>
+            <p className="info-content">{ship.MGLT + "MGLT" || "Unknown"}</p>
+          </div>
+        </div>
       </div>
     </>
   );

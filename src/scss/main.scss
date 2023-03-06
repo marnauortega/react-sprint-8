@@ -2,6 +2,9 @@
 @import "_variables";
 
 @import "components/_header";
+@import "components/_home";
+@import "components/_footer";
+@import "components/_login";
 @import "components/_ship";
 @import "components/_shiplist";
 
@@ -13,9 +16,22 @@ body {
   margin: 0;
   font-family: "DINNext", Helvetica;
   font-weight: 400;
+  text-transform: uppercase;
   background-color: black;
+  -webkit-font-smoothing: antialiased;
 }
 
 * {
   color: white;
 }
+
+main {
+  display: flex;
+  justify-content: center;
+  padding: $padding-top $padding-side 0;
+}
+
+// .fade {
+//   visibility: hidden;
+//   opacity: 0;
+// }

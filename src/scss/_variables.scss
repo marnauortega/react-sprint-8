@@ -1,0 +1,5 @@
+$padding-side: 145px;
+$padding-top: 100px;
+$header-height: calc(4vh + 111px + 4vh + 3px + 2vh + 19px + 2vh + 3px);
+$nav-height: calc(3px + 2vh + 19px + 2vh + 3px);
+$main-height: calc(100vh - $header-height);

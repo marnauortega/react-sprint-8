@@ -1,0 +1,38 @@
+.home {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  margin: auto;
+  perspective: 50em;
+}
+
+.home * {
+  transform: rotateX(50deg);
+}
+
+.home h1 {
+  text-align: center;
+}
+
+.home p {
+  font-size: 25px;
+  text-align: justify;
+  margin-top: -7%;
+}
+
+.home button {
+  border: 2px solid white;
+  background: black;
+  width: 130%;
+  margin-left: -15%;
+  padding: 2rem 0;
+  font-size: 25px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.home button:hover {
+  background: white;
+  color: black;
+}

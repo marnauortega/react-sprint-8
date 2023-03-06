@@ -1,0 +1,32 @@
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.field {
+  // display: inline-block;
+  padding-bottom: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.field input {
+  border: 1px solid white;
+  background: black;
+  text-indent: 30px;
+}
+
+input {
+  height: 55px;
+  width: 450px;
+}
+
+.error {
+  text-transform: none;
+}
+
+.submit {
+  color: black;
+}

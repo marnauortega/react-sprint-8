@@ -35,39 +35,37 @@ const App = () => {
   manageLocalStorage("users", users, setUsers);
 
   return (
-    <>
-      <BrowserRouter>
-        <Header logged={logged} setLogged={setLogged} />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="login" element={<Login />}>
-            <Route path="login" element={<LoginForm users={users} setLogged={setLogged} />} />
-            <Route path="register" element={<RegisterForm users={users} setUsers={setUsers} />} />
-            <Route path="registered" element={<Welcome newUser={true} />} />
-            <Route path="logged" element={<Welcome />} />
-            <Route index element={<Navigate to="login" />} />
-          </Route>
-          <Route
-            path="starships"
-            element={
-              <ProtectedRoute logged={logged}>
-                <ShipList shipList={shipList} />
-              </ProtectedRoute>
-            }
-          />
-          <Route
-            path="starships/:id"
-            element={
-              <ProtectedRoute logged={logged}>
-                <Ship shipList={shipList} characters={characters} films={films} />
-              </ProtectedRoute>
-            }
-          />
-          <Route path="*" element={<p>There's nothing here: 404!</p>} />
-        </Routes>
-        <Footer />
-      </BrowserRouter>
-    </>
+    <BrowserRouter>
+      <Header logged={logged} setLogged={setLogged} />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="login" element={<Login />}>
+          <Route path="signin" element={<LoginForm users={users} setLogged={setLogged} />} />
+          <Route path="register" element={<RegisterForm users={users} setUsers={setUsers} />} />
+          <Route index element={<Navigate to="signin" />} />
+        </Route>
+        <Route path="registered" element={<Welcome newUser={true} />} />
+        <Route path="logged" element={<Welcome />} />
+        <Route
+          path="starships"
+          element={
+            <ProtectedRoute logged={logged}>
+              <ShipList shipList={shipList} />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="starships/:id"
+          element={
+            <ProtectedRoute logged={logged}>
+              <Ship shipList={shipList} characters={characters} films={films} />
+            </ProtectedRoute>
+          }
+        />
+        <Route path="*" element={<p>There's nothing here: 404!</p>} />
+      </Routes>
+      <Footer />
+    </BrowserRouter>
   );
 };
 

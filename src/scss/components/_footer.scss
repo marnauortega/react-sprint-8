@@ -1,0 +1,11 @@
+footer {
+  border-top: 1.5px solid white;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 $padding-side;
+  margin-top: $padding-top;
+}
+
+footer > * {
+  padding: 6vh 0;
+}
