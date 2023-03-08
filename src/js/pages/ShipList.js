@@ -2,13 +2,14 @@ import arrow from "../../assets/images/arrow.svg";
 import { Link } from "react-router-dom";
 import Page from "../components/Page";
 import * as images from "../../assets/images/missingImg/images.js";
+import Loading from "../components/Loading";
 
 const ShipList = ({ shipList }) => {
   return (
     <Page title="Starships" mainClass="starships">
-      <div className="shiplist">
-        {shipList.length > 0 &&
-          shipList.map((ship) => (
+      {shipList.length > 0 ? (
+        <div className="shiplist">
+          {shipList.map((ship) => (
             <Link to={"/starships/" + ship.id} className="ship" id={ship.id} key={ship.id}>
               {/* <div className="model">{ship.model}</div> */}
               <img
@@ -26,7 +27,10 @@ const ShipList = ({ shipList }) => {
               </div>
             </Link>
           ))}
-      </div>
+        </div>
+      ) : (
+        <Loading />
+      )}
     </Page>
   );
 };

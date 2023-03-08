@@ -211,7 +211,7 @@ function LoginForm({ users, setLogged }) {
 function Welcome({ newUser }) {
   return (
     <>
-      <p>{newUser ? "Welcome! You are registered" : "Welcome! You are logged in"}</p>
+      <p className="welcome">{newUser ? "Welcome! You are registered" : "Welcome! You are logged in"}</p>
     </>
   );
 }

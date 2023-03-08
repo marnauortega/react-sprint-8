@@ -9,6 +9,15 @@ nav {
   z-index: 4;
 }
 
+nav::after {
+  content: "";
+  position: absolute;
+  top: 61px;
+  height: 110px;
+  width: 100%;
+  background: linear-gradient(black, transparent);
+}
+
 h1 {
   margin: 0;
 }
@@ -74,6 +83,19 @@ nav .nav-link {
 nav .nav-link:not(.arrow):hover,
 nav .nav-link.active {
   border-bottom: 3px solid white;
+  position: relative;
+}
+
+nav .nav-link:not(.arrow):hover::after,
+nav .nav-link.active::after {
+  content: "";
+  position: absolute;
+  height: 3px;
+  bottom: -3px;
+  left: 0;
+  width: 100%;
+  box-shadow: 0px 0px 6px rgba(251, 232, 140, 0.7), 0px 0px 4px #fbe36f;
+  border-radius: 2px;
 }
 
 nav .arrow {
